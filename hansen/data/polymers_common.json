@@ -1,0 +1,272 @@
+[
+  {
+    "Page": 1,
+    "Number": 6,
+    "Polymer": "EPIKOTE 828",
+    "Dispersion": 23.1,
+    "Polar": 14.6,
+    "Hydrogen Bonding": 5,
+    "Interaction Radius": 20.5
+  },
+  {
+    "Page": 1,
+    "Number": 7,
+    "Polymer": "EPIKOTE 1001",
+    "Dispersion": 20,
+    "Polar": 10.32,
+    "Hydrogen Bonding": 10.11,
+    "Interaction Radius": 10.02
+  },
+  {
+    "Page": 1,
+    "Number": 11,
+    "Polymer": "PKHH",
+    "Dispersion": 23.4,
+    "Polar": 7.2,
+    "Hydrogen Bonding": 14.8,
+    "Interaction Radius": 14.9
+  },
+  {
+    "Page": 2,
+    "Number": 39,
+    "Polymer": "VIPLA KR (PVC)",
+    "Dispersion": 18.4,
+    "Polar": 6.6,
+    "Hydrogen Bonding": 8,
+    "Interaction Radius": 3
+  },
+  {
+    "Page": 3,
+    "Number": 63,
+    "Polymer": "LUCITE 2044 PMMA",
+    "Dispersion": 16.2,
+    "Polar": 6.8,
+    "Hydrogen Bonding": 5.7,
+    "Interaction Radius": 9.1
+  },
+  {
+    "Page": 3,
+    "Number": 66,
+    "Polymer": "PMMA",
+    "Dispersion": 18.64,
+    "Polar": 10.52,
+    "Hydrogen Bonding": 7.51,
+    "Interaction Radius": 8.59
+  },
+  {
+    "Page": 4,
+    "Number": 110,
+    "Polymer": "TEFLON (SL2-)",
+    "Dispersion": 17.1,
+    "Polar": 8.1,
+    "Hydrogen Bonding": 1.3,
+    "Interaction Radius": 4.7
+  },
+  {
+    "Page": 4,
+    "Number": 111,
+    "Polymer": "DOW EPOXY NOVOLAC 438",
+    "Dispersion": 20.3,
+    "Polar": 15.4,
+    "Hydrogen Bonding": 5.3,
+    "Interaction Radius": 15.1
+  },
+  {
+    "Page": 4,
+    "Number": 126,
+    "Polymer": "PVC 20 MIN",
+    "Dispersion": 16.1,
+    "Polar": 7.1,
+    "Hydrogen Bonding": 5.9,
+    "Interaction Radius": 9.3
+  },
+  {
+    "Page": 6,
+    "Number": 180,
+    "Polymer": "HDPE",
+    "Dispersion": 18,
+    "Polar": 0,
+    "Hydrogen Bonding": 2,
+    "Interaction Radius": 2
+  },
+  {
+    "Page": 6,
+    "Number": 181,
+    "Polymer": "PP",
+    "Dispersion": 18,
+    "Polar": 0,
+    "Hydrogen Bonding": 1,
+    "Interaction Radius": 6
+  },
+  {
+    "Page": 6,
+    "Number": 183,
+    "Polymer": "PAN",
+    "Dispersion": 21.7,
+    "Polar": 14.1,
+    "Hydrogen Bonding": 9.1,
+    "Interaction Radius": 10.9
+  },
+  {
+    "Page": 6,
+    "Number": 194,
+    "Polymer": "PE",
+    "Dispersion": 16,
+    "Polar": 0.8,
+    "Hydrogen Bonding": 2.8,
+    "Interaction Radius": 3.2
+  },
+  {
+    "Page": 6,
+    "Number": 197,
+    "Polymer": "NAT RUBBER",
+    "Dispersion": 16,
+    "Polar": 4,
+    "Hydrogen Bonding": 6,
+    "Interaction Radius": 1.3
+  },
+  {
+    "Page": 6,
+    "Number": 203,
+    "Polymer": "PS",
+    "Dispersion": 18.5,
+    "Polar": 4.5,
+    "Hydrogen Bonding": 2.9,
+    "Interaction Radius": 5.3
+  },
+  {
+    "Page": 6,
+    "Number": 205,
+    "Polymer": "PVC",
+    "Dispersion": 17.6,
+    "Polar": 7.8,
+    "Hydrogen Bonding": 3.4,
+    "Interaction Radius": 8.2
+  },
+  {
+    "Page": 7,
+    "Number": 213,
+    "Polymer": "MYLAR PET",
+    "Dispersion": 18,
+    "Polar": 6.2,
+    "Hydrogen Bonding": 6.2,
+    "Interaction Radius": 5
+  },
+  {
+    "Page": 7,
+    "Number": 224,
+    "Polymer": "NYLON 66",
+    "Dispersion": 16,
+    "Polar": 11,
+    "Hydrogen Bonding": 24,
+    "Interaction Radius": 3
+  },
+  {
+    "Page": 7,
+    "Number": 234,
+    "Polymer": "R+H PMMA",
+    "Dispersion": 19.1,
+    "Polar": 11.3,
+    "Hydrogen Bonding": 4.1,
+    "Interaction Radius": 10.3
+  },
+  {
+    "Page": 9,
+    "Number": 303,
+    "Polymer": "EXON 470 PVC",
+    "Dispersion": 17.4,
+    "Polar": 7.8,
+    "Hydrogen Bonding": 3.8,
+    "Interaction Radius": 7.7
+  },
+  {
+    "Page": 10,
+    "Number": 368,
+    "Polymer": "LDPE PERM>80",
+    "Dispersion": 16.5,
+    "Polar": 4.5,
+    "Hydrogen Bonding": 0.5,
+    "Interaction Radius": 6
+  },
+  {
+    "Page": 11,
+    "Number": 384,
+    "Polymer": "R AU ESTER PU",
+    "Dispersion": 17.9,
+    "Polar": 13.3,
+    "Hydrogen Bonding": 10.7,
+    "Interaction Radius": 17.1
+  },
+  {
+    "Page": 11,
+    "Number": 392,
+    "Polymer": "R CHLORINATED PVC",
+    "Dispersion": 17.5,
+    "Polar": 6.5,
+    "Hydrogen Bonding": 5.5,
+    "Interaction Radius": 6.3
+  },
+  {
+    "Page": 11,
+    "Number": 396,
+    "Polymer": "R PA66",
+    "Dispersion": 18.2,
+    "Polar": 8.8,
+    "Hydrogen Bonding": 10.8,
+    "Interaction Radius": 5.2
+  },
+  {
+    "Page": 11,
+    "Number": 399,
+    "Polymer": "R POLYCARBONATE",
+    "Dispersion": 19.1,
+    "Polar": 10.9,
+    "Hydrogen Bonding": 5.1,
+    "Interaction Radius": 12.1
+  },
+  {
+    "Page": 11,
+    "Number": 401,
+    "Polymer": "R PET",
+    "Dispersion": 19.1,
+    "Polar": 6.3,
+    "Hydrogen Bonding": 9.1,
+    "Interaction Radius": 4.8
+  },
+  {
+    "Page": 11,
+    "Number": 403,
+    "Polymer": "R PMMA",
+    "Dispersion": 19.3,
+    "Polar": 16.7,
+    "Hydrogen Bonding": 4.7,
+    "Interaction Radius": 17.4
+  },
+  {
+    "Page": 11,
+    "Number": 408,
+    "Polymer": "R EPOXY COLD CURING",
+    "Dispersion": 16.8,
+    "Polar": 10.8,
+    "Hydrogen Bonding": 8.8,
+    "Interaction Radius": 8.2
+  },
+  {
+    "Page": 11,
+    "Number": 409,
+    "Polymer": "R EPOXY HOT CURING",
+    "Dispersion": 18.3,
+    "Polar": 12.3,
+    "Hydrogen Bonding": 9.7,
+    "Interaction Radius": 7.3
+  },
+  {
+    "Page": 12,
+    "Number": 454,
+    "Polymer": "NEOPRENE CR",
+    "Dispersion": 18.1,
+    "Polar": 4.3,
+    "Hydrogen Bonding": 6.7,
+    "Interaction Radius": 8.9
+  }
+]

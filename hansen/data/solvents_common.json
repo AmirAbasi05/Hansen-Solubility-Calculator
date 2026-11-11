@@ -1,0 +1,302 @@
+[
+  {
+    "Page": 1,
+    "No": 5,
+    "Solvent Name": "Acetic Acid",
+    "Autonom/ACD Name": "Acetic acid",
+    "Dispersion": 14.5,
+    "Polarity": 8,
+    "Hydrogen Bonding": 13.5,
+    "Molar Volume": 57.1
+  },
+  {
+    "Page": 1,
+    "No": 7,
+    "Solvent Name": "Acetone",
+    "Autonom/ACD Name": "Propan-2-one",
+    "Dispersion": 15.5,
+    "Polarity": 10.4,
+    "Hydrogen Bonding": 7,
+    "Molar Volume": 74
+  },
+  {
+    "Page": 2,
+    "No": 10,
+    "Solvent Name": "Acetonitrile",
+    "Autonom/ACD Name": "Acetonitrile",
+    "Dispersion": 15.3,
+    "Polarity": 18,
+    "Hydrogen Bonding": 6.1,
+    "Molar Volume": 52.6
+  },
+  {
+    "Page": 8,
+    "No": 46,
+    "Solvent Name": "Aniline",
+    "Autonom/ACD Name": "Phenylamine",
+    "Dispersion": 19.4,
+    "Polarity": 5.1,
+    "Hydrogen Bonding": 10.2,
+    "Molar Volume": 91.5
+  },
+  {
+    "Page": 9,
+    "No": 52,
+    "Solvent Name": "Benzene",
+    "Autonom/ACD Name": "Benzene",
+    "Dispersion": 18.4,
+    "Polarity": 0,
+    "Hydrogen Bonding": 2,
+    "Molar Volume": 89.4
+  },
+  {
+    "Page": 19,
+    "No": 102,
+    "Solvent Name": "n-Butyl Acetate",
+    "Autonom/ACD Name": "Acetic acid butyl ester",
+    "Dispersion": 15.8,
+    "Polarity": 3.7,
+    "Hydrogen Bonding": 6.3,
+    "Molar Volume": 132.5
+  },
+  {
+    "Page": 24,
+    "No": 122,
+    "Solvent Name": "Carbon tetrachloride<br>P for 0 Dipole Moment",
+    "Autonom/ACD Name": "Tetrachloro-methane",
+    "Dispersion": 17.8,
+    "Polarity": 0,
+    "Hydrogen Bonding": 0.6,
+    "Molar Volume": 97.1
+  },
+  {
+    "Page": 29,
+    "No": 148,
+    "Solvent Name": "Chlorobenzene",
+    "Autonom/ACD Name": "Chloro-benzene",
+    "Dispersion": 19,
+    "Polarity": 4.3,
+    "Hydrogen Bonding": 2,
+    "Molar Volume": 102.1
+  },
+  {
+    "Page": 31,
+    "No": 156,
+    "Solvent Name": "Chloroform",
+    "Autonom/ACD Name": "Trichloro-methane",
+    "Dispersion": 17.8,
+    "Polarity": 3.1,
+    "Hydrogen Bonding": 5.7,
+    "Molar Volume": 80.7
+  },
+  {
+    "Page": 36,
+    "No": 181,
+    "Solvent Name": "Cyclohexane",
+    "Autonom/ACD Name": "Cyclohexane",
+    "Dispersion": 16.8,
+    "Polarity": 0,
+    "Hydrogen Bonding": 0.2,
+    "Molar Volume": 108.7
+  },
+  {
+    "Page": 51,
+    "No": 255,
+    "Solvent Name": "Diethyl Ether",
+    "Autonom/ACD Name": "Ethoxy-ethane",
+    "Dispersion": 14.5,
+    "Polarity": 2.9,
+    "Hydrogen Bonding": 5.1,
+    "Molar Volume": 104.8
+  },
+  {
+    "Page": 58,
+    "No": 297,
+    "Solvent Name": "Dimethyl Formamide",
+    "Autonom/ACD Name": "N,N-Dimethyl-formamide",
+    "Dispersion": 17.4,
+    "Polarity": 13.7,
+    "Hydrogen Bonding": 11.3,
+    "Molar Volume": 77
+  },
+  {
+    "Page": 60,
+    "No": 303,
+    "Solvent Name": "Dimethyl Sulfoxide",
+    "Autonom/ACD Name": "Methylsulfyl-methane",
+    "Dispersion": 18.4,
+    "Polarity": 16.4,
+    "Hydrogen Bonding": 10.2,
+    "Molar Volume": 71.3
+  },
+  {
+    "Page": 61,
+    "No": 306,
+    "Solvent Name": "1,4-Dioxane",
+    "Autonom/ACD Name": "[1,4]Dioxane",
+    "Dispersion": 19,
+    "Polarity": 1.8,
+    "Hydrogen Bonding": 7.4,
+    "Molar Volume": 85.7
+  },
+  {
+    "Page": 65,
+    "No": 325,
+    "Solvent Name": "Ethanol",
+    "Autonom/ACD Name": "Ethanol",
+    "Dispersion": 15.8,
+    "Polarity": 8.8,
+    "Hydrogen Bonding": 19.4,
+    "Molar Volume": 58.5
+  },
+  {
+    "Page": 65,
+    "No": 328,
+    "Solvent Name": "Ethyl Acetate",
+    "Autonom/ACD Name": "Acetic acid ethyl ester",
+    "Dispersion": 15.8,
+    "Polarity": 5.3,
+    "Hydrogen Bonding": 7.2,
+    "Molar Volume": 98.5
+  },
+  {
+    "Page": 72,
+    "No": 368,
+    "Solvent Name": "Ethylene Glycol",
+    "Autonom/ACD Name": "Ethane-1,2-diol",
+    "Dispersion": 17,
+    "Polarity": 11,
+    "Hydrogen Bonding": 26,
+    "Molar Volume": 55.8
+  },
+  {
+    "Page": 78,
+    "No": 406,
+    "Solvent Name": "Glycerol",
+    "Autonom/ACD Name": "Propane-1,2,3-triol",
+    "Dispersion": 17.4,
+    "Polarity": 12.1,
+    "Hydrogen Bonding": 29.3,
+    "Molar Volume": 73.3
+  },
+  {
+    "Page": 79,
+    "No": 409,
+    "Solvent Name": "Heptane",
+    "Autonom/ACD Name": "Heptane",
+    "Dispersion": 15.3,
+    "Polarity": 0,
+    "Hydrogen Bonding": 0,
+    "Molar Volume": 147.4
+  },
+  {
+    "Page": 81,
+    "No": 417,
+    "Solvent Name": "n-Hexane",
+    "Autonom/ACD Name": "n-Hexane",
+    "Dispersion": 14.9,
+    "Polarity": 0,
+    "Hydrogen Bonding": 0,
+    "Molar Volume": 131.6
+  },
+  {
+    "Page": 89,
+    "No": 456,
+    "Solvent Name": "Methanol",
+    "Autonom/ACD Name": "Methanol",
+    "Dispersion": 15.1,
+    "Polarity": 12.3,
+    "Hydrogen Bonding": 22.3,
+    "Molar Volume": 40.7
+  },
+  {
+    "Page": 93,
+    "No": 481,
+    "Solvent Name": "Methyl Ethyl Ketone",
+    "Autonom/ACD Name": "Butan-2-one",
+    "Dispersion": 16,
+    "Polarity": 9,
+    "Hydrogen Bonding": 5.1,
+    "Molar Volume": 90.1
+  },
+  {
+    "Page": 95,
+    "No": 491,
+    "Solvent Name": "Methyl Isobutyl Ketone",
+    "Autonom/ACD Name": "4-Methyl-pentan-2-one",
+    "Dispersion": 15.3,
+    "Polarity": 6.1,
+    "Hydrogen Bonding": 4.1,
+    "Molar Volume": 125.8
+  },
+  {
+    "Page": 100,
+    "No": 521,
+    "Solvent Name": "N-Methyl-2-Pyrrolidone",
+    "Autonom/ACD Name": "1-Methyl-pyrrolidin-2-one",
+    "Dispersion": 18,
+    "Polarity": 12.3,
+    "Hydrogen Bonding": 7.2,
+    "Molar Volume": 96.5
+  },
+  {
+    "Page": 101,
+    "No": 524,
+    "Solvent Name": "Methylene Dichloride",
+    "Autonom/ACD Name": "Dichloro-methane",
+    "Dispersion": 18.2,
+    "Polarity": 6.3,
+    "Hydrogen Bonding": 6.1,
+    "Molar Volume": 63.9
+  },
+  {
+    "Page": 111,
+    "No": 570,
+    "Solvent Name": "2-Propanol",
+    "Autonom/ACD Name": "Propane-2-ol",
+    "Dispersion": 15.8,
+    "Polarity": 6.1,
+    "Hydrogen Bonding": 16.4,
+    "Molar Volume": 76.8
+  },
+  {
+    "Page": 120,
+    "No": 617,
+    "Solvent Name": "Tetrahydrofuran",
+    "Autonom/ACD Name": "Tetrahydro-furan",
+    "Dispersion": 16.8,
+    "Polarity": 5.7,
+    "Hydrogen Bonding": 8,
+    "Molar Volume": 81.7
+  },
+  {
+    "Page": 124,
+    "No": 637,
+    "Solvent Name": "Toluene",
+    "Autonom/ACD Name": "Toluene",
+    "Dispersion": 18,
+    "Polarity": 1.4,
+    "Hydrogen Bonding": 2,
+    "Molar Volume": 106.8
+  },
+  {
+    "Page": 136,
+    "No": 696,
+    "Solvent Name": "Water",
+    "Autonom/ACD Name": "Water",
+    "Dispersion": 15.5,
+    "Polarity": 16,
+    "Hydrogen Bonding": 42.3,
+    "Molar Volume": 18
+  },
+  {
+    "Page": 136,
+    "No": 697,
+    "Solvent Name": "Xylene",
+    "Autonom/ACD Name": "p-Xylene",
+    "Dispersion": 17.6,
+    "Polarity": 1,
+    "Hydrogen Bonding": 3.1,
+    "Molar Volume": 123.3
+  }
+]

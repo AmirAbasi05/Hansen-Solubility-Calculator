@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hansen Solubility Calculator</title>
+<style>
+    /* ---------- 3D sphere panel ---------- */
+  #hansen-3d {
+    width: 100%;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  @media (max-width: 640px) {
+    #hansen-3d { height: 380px; }
+  }
+  .legend-note {
+    font-size: .78rem;
+    color: var(--text-subtle);
+    margin: 0 0 .75rem;
+    padding: .5rem .75rem;
+    background: #fafbfc;
+    border-left: 3px solid var(--accent);
+    border-radius: 4px;
+  }
+  :root {
+    --bg: #f6f7fb;
+    --bg-grad: radial-gradient(1200px 600px at 50% -10%, #eef2ff 0%, #f6f7fb 55%);
+    --card: #ffffff;
+    --text: #0f172a;
+    --text-muted: #64748b;
+    --text-subtle: #94a3b8;
+    --border: #e5e7eb;
+    --border-strong: #d1d5db;
+    --accent: #6366f1;
+    --accent-hover: #4f46e5;
+    --accent-light: #eef2ff;
+    --accent-ring: rgba(99, 102, 241, .18);
+    --success: #059669;
+    --success-bg: #ecfdf5;
+    --success-border: #a7f3d0;
+    --warning: #d97706;
+    --warning-bg: #fffbeb;
+    --danger: #dc2626;
+    --danger-bg: #fef2f2;
+    --shadow-sm: 0 1px 2px rgba(15, 23, 42, .04);
+    --shadow: 0 1px 3px rgba(15, 23, 42, .06), 0 1px 2px rgba(15, 23, 42, .04);
+    --shadow-md: 0 4px 12px rgba(15, 23, 42, .06), 0 2px 4px rgba(15, 23, 42, .04);
+    --shadow-lg: 0 10px 24px rgba(15, 23, 42, .10), 0 4px 8px rgba(15, 23, 42, .05);
+    --radius: 12px;
+    --radius-sm: 8px;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background: var(--bg-grad);
+    background-attachment: fixed;
+    color: var(--text);
+    min-height: 100vh;
+    padding: 2.5rem 1rem 4rem;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .container { max-width: 920px; margin: 0 auto; }
+
+  /* ---------- Header ---------- */
+  header { text-align: center; margin-bottom: 2rem; }
+  h1 {
+    font-size: 1.85rem;
+    font-weight: 700;
+    margin: 0 0 .4rem;
+    letter-spacing: -.02em;
+    display: inline-flex;
+    align-items: center;
+    gap: .55rem;
+  }
+  h1 .logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.2rem;
+    height: 2.2rem;
+    background: linear-gradient(135deg, var(--accent), #8b5cf6);
+    border-radius: 10px;
+    font-size: 1.15rem;
+    box-shadow: var(--shadow-md);
+  }
+  .subtitle {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: .95rem;
+  }
+
+  /* ---------- Panels ---------- */
+  .panel {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    margin-bottom: 1.25rem;
+    transition: box-shadow .2s;
+  }
+  .panel:hover { box-shadow: var(--shadow-md); }
+
+  h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin: 0 0 1rem;
+    letter-spacing: -.01em;
+    display: flex;
+    align-items: baseline;
+    gap: .5rem;
+    flex-wrap: wrap;
+  }
+  h2 .meta {
+    color: var(--text-muted);
+    font-size: .85rem;
+    font-weight: 500;
+  }
+
+  /* ---------- Search row ---------- */
+  .search-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+  @media (max-width: 640px) {
+    .search-row { grid-template-columns: 1fr; gap: 1rem; }
+  }
+
+  .field { position: relative; }
+  .field > label {
+    display: block;
+    font-size: .78rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    margin-bottom: .5rem;
+  }
+
+  /* ---------- Select ---------- */
+  select {
+    width: 100%;
+    padding: .7rem 2.5rem .7rem .9rem;
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-sm);
+    font-size: .95rem;
+    font-family: inherit;
+    background: var(--card);
+    color: var(--text);
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpath d='M6 9l6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right .75rem center;
+    background-size: 1rem;
+    transition: border-color .15s, box-shadow .15s;
+  }
+  select:hover { border-color: #9ca3af; }
+  select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-ring);
+  }
+
+  /* ---------- Divider ---------- */
+  .or-divider {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    color: var(--text-subtle);
+    font-size: .7rem;
+    margin: .75rem 0;
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    font-weight: 500;
+  }
+  .or-divider::before, .or-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* ---------- Search input ---------- */
+  .field input[type="text"] {
+    width: 100%;
+    padding: .7rem .9rem .7rem 2.4rem;
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-sm);
+    font-size: .95rem;
+    font-family: inherit;
+    color: var(--text);
+    outline: none;
+    background: var(--card)
+      url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3ccircle cx='11' cy='11' r='8'/%3e%3cpath d='M21 21l-4.35-4.35'/%3e%3c/svg%3e")
+      no-repeat .75rem center;
+    background-size: 1rem;
+    transition: border-color .15s, box-shadow .15s;
+  }
+  .field input[type="text"]:hover { border-color: #9ca3af; }
+  .field input[type="text"]:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-ring);
+  }
+
+  /* ---------- Results dropdown ---------- */
+  .results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 20;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    margin-top: .4rem;
+    max-height: 300px;
+    overflow-y: auto;
+    list-style: none;
+    padding: .3rem;
+    display: none;
+    box-shadow: var(--shadow-lg);
+    animation: fadeDown .12s ease-out;
+  }
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-4px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .results.open { display: block; }
+
+  .results li {
+    padding: .6rem .75rem;
+    cursor: pointer;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: .75rem;
+    transition: background .1s;
+  }
+  .results li:hover { background: var(--accent-light); }
+  .results li + li { margin-top: 1px; }
+
+  .results .name {
+    font-weight: 500;
+    font-size: .92rem;
+    display: flex;
+    align-items: center;
+    gap: .4rem;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .results .sub {
+    color: var(--text-subtle);
+    font-size: .78rem;
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+    flex-shrink: 0;
+  }
+  .results .empty {
+    color: var(--text-subtle);
+    font-style: italic;
+    cursor: default;
+    justify-content: center;
+    font-size: .9rem;
+  }
+  .results .empty:hover { background: transparent; }
+
+  .badge {
+    display: inline-block;
+    font-size: .6rem;
+    font-weight: 700;
+    padding: .1rem .4rem;
+    border-radius: 4px;
+    background: linear-gradient(135deg, var(--accent), #8b5cf6);
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    flex-shrink: 0;
+  }
+
+  /* ---------- Selected chip ---------- */
+  .selected {
+    margin-top: .65rem;
+    font-size: .88rem;
+    font-weight: 500;
+    color: var(--accent);
+    background: var(--accent-light);
+    border: 1px solid #e0e7ff;
+    padding: .5rem .75rem;
+    border-radius: var(--radius-sm);
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+    gap: .5rem;
+    animation: fadeDown .15s ease-out;
+  }
+  .selected.show { display: flex; }
+  .selected .clear {
+    background: none;
+    border: none;
+    color: var(--text-subtle);
+    cursor: pointer;
+    font-size: 1.2rem;
+    padding: 0 .2rem;
+    line-height: 1;
+    border-radius: 4px;
+    transition: color .15s, background .15s;
+  }
+  .selected .clear:hover { color: var(--danger); background: #fee2e2; }
+
+  /* ---------- Result panel ---------- */
+  .hidden { display: none; }
+
+  .metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: .75rem;
+    margin-bottom: 1rem;
+  }
+  @media (max-width: 640px) {
+    .metrics { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  .metric {
+    background: #fafbfc;
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--border-strong);
+    border-radius: 10px;
+    padding: .85rem .75rem;
+    text-align: center;
+    transition: transform .15s, box-shadow .15s;
+  }
+  .metric:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+  }
+  .metric:nth-child(1) { border-top-color: #6366f1; }
+  .metric:nth-child(2) { border-top-color: #8b5cf6; }
+  .metric:nth-child(3) { border-top-color: #06b6d4; }
+  .metric:nth-child(4) { border-top-color: #10b981; }
+  .metric:has(.status-brd) { border-top-color: var(--warning) !important; }
+  .metric:has(.status-ins) { border-top-color: var(--danger) !important; }
+
+  .metric .label {
+    display: block;
+    font-size: .68rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    font-weight: 600;
+  }
+  .metric .value {
+    display: block;
+    font-size: 1.35rem;
+    font-weight: 700;
+    margin-top: .3rem;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -.02em;
+  }
+
+  /* status pill inside metric */
+  .metric .value.status-sol,
+  .metric .value.status-brd,
+  .metric .value.status-ins {
+    display: inline-block;
+    font-size: .82rem;
+    font-weight: 600;
+    padding: .3rem .75rem;
+    border-radius: 999px;
+    margin-top: .4rem;
+    letter-spacing: 0;
+  }
+  .metric .value.status-sol { background: var(--success-bg); color: var(--success); border: 1px solid var(--success-border); }
+  .metric .value.status-brd { background: var(--warning-bg); color: var(--warning); border: 1px solid #fde68a; }
+  .metric .value.status-ins { background: var(--danger-bg); color: var(--danger); border: 1px solid #fecaca; }
+
+  /* ---------- Deltas ---------- */
+  .deltas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--border);
+  }
+  .deltas > span {
+    background: #fafbfc;
+    border: 1px solid var(--border);
+    padding: .4rem .75rem;
+    border-radius: var(--radius-sm);
+    font-size: .85rem;
+    font-variant-numeric: tabular-nums;
+    display: inline-flex;
+    align-items: center;
+    gap: .45rem;
+  }
+  .deltas b {
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: .72rem;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+  }
+
+  /* ---------- Table ---------- */
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: .9rem;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  th {
+    text-align: left;
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: .72rem;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    padding: .7rem .75rem;
+    background: #fafbfc;
+    border-bottom: 1px solid var(--border);
+  }
+  td {
+    padding: .65rem .75rem;
+    border-bottom: 1px solid var(--border);
+    font-variant-numeric: tabular-nums;
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr { transition: background .1s; }
+  tbody tr:nth-child(even) { background: #fcfcfd; }
+  td.num { text-align: right; }
+  th.num { text-align: right; }
+
+  .row-clickable { cursor: pointer; }
+  .row-clickable:hover { background: var(--accent-light) !important; }
+
+  /* table status */
+  td.status-sol { color: var(--success); font-weight: 600; }
+  td.status-brd { color: var(--warning); font-weight: 600; }
+  td.status-ins { color: var(--danger); font-weight: 600; }
+
+  /* ---------- Empty state ---------- */
+  .empty-state {
+    text-align: center;
+    color: var(--text-subtle);
+    padding: 2rem 1rem;
+    font-size: .9rem;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <h1>
+      <span class="logo">🧪</span>
+      Hansen Solubility Calculator
+    </h1>
+    <p class="subtitle">Check polymer–solvent compatibility by Hansen parameters</p>
+  </header>
+
+  <div class="panel">
+    <div class="search-row">
+      <div class="field">
+        <label>Solvent</label>
+        <select id="solvent-common"></select>
+        <div class="or-divider">or search all</div>
+        <input type="text" id="solvent-search" placeholder="Search all solvents…" autocomplete="off">
+        <ul id="solvent-results" class="results"></ul>
+        <div id="solvent-selected" class="selected"></div>
+      </div>
+      <div class="field">
+        <label>Polymer</label>
+        <select id="polymer-common"></select>
+        <div class="or-divider">or search all</div>
+        <input type="text" id="polymer-search" placeholder="Search all polymers…" autocomplete="off">
+        <ul id="polymer-results" class="results"></ul>
+        <div id="polymer-selected" class="selected"></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="result-panel" class="panel hidden"></div>
+  <div id="sphere-panel" class="panel hidden">
+    <h2>Hansen solubility sphere <span class="meta">drag to rotate · scroll to zoom</span></h2>
+    <p class="legend-note">
+      🟣 Center = polymer · <b>δD is scaled ×2</b> for a true spherical view
+      (since R<sub>a</sub> uses 4·ΔD²). 🟢 dots = top soluble solvents · 🔴 = top insoluble.
+    </p>
+    <div id="hansen-3d"></div>
+  </div>
+  <div id="best-solvents" class="panel hidden"></div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/minisearch@7.1.1/dist/umd/index.min.js"></script>
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
